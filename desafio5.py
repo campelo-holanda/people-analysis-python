@@ -1,16 +1,17 @@
 lista = []
-for c in range(0, 5):
-    n = int(input("Digite um número: "))
-    if c == 0 or n > lista[-1]:
-        lista.append(n)
-    else:
-        pos = 0
-        while pos < len(lista):
-            if n <= lista[pos]:
-                lista.insert(pos, n)
-                break
-            pos += 1
-    
-print(f"Os valores digitados em ordem foram {lista}")
 
-   
+for c in range(0, 10):
+    numero = int(input("Digite um número: "))
+    lista.append(numero)
+
+maior = None
+segundo = None
+
+for n in lista:
+    if maior is None or n > maior:
+        segundo = maior
+        maior = n
+    elif n != maior and(segundo is None or n > segundo):
+        segundo = n
+
+print(f"Segundo maior é {segundo}")
